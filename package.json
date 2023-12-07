@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build": "tailwindcss build app.css -i static/styles.css"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.6"
+  }
+}
