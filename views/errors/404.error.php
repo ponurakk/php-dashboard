@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <h1>Not Found</h1>
+    <h1>404</h1>
+    <h2>Not Found</h2>
   </body>
 </html>

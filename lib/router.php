@@ -39,7 +39,7 @@ function route($route, $path_to_include) {
 	}
 
 	if ($route == "/404") {
-		include_once __DIR__ . "/$path_to_include";
+		include_once "./$path_to_include";
 		exit();
 	}
 
@@ -57,7 +57,7 @@ function route($route, $path_to_include) {
 			call_user_func_array($callback, []);
 			exit();
 		}
-		include_once __DIR__ . "/$path_to_include";
+		include_once "./$path_to_include";
 		exit();
 	}
 
@@ -83,7 +83,7 @@ function route($route, $path_to_include) {
 		exit();
 	}
 
-	include_once __DIR__ . "/$path_to_include";
+	include_once "./$path_to_include";
 	exit();
 }
 
