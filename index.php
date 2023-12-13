@@ -1,19 +1,35 @@
 <?php
-require_once "./lib/router.php";
-$top_dir = $_SERVER['REQUEST_URI'];
-$top_dir = rtrim($top_dir, "/");
+include "./lib/utils.php";
+include "./config.php";
+?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./static/index.css" rel="stylesheet">
+  </head>
+  <body>
+    <?php 
+    require_once "./lib/router.php";
+    include_once "config.php";
 
-$router = new Router();
+    $router = new Router();
 
-//# Views
-$router->get("$top_dir/", "views/index.view.php");
-$router->get("$top_dir/login", "views/index.view.php");
-$router->get("$top_dir/register", "views/register.view.php");
-$router->get("$top_dir/dashboard", "views/dashboard.view.php");
+    //# Views
+    $router->get("$basePath", "views/index.view.php");
+    $router->get("$basePath/login", "views/login.view.php");
+    $router->get("$basePath/register", "views/register.view.php");
+    $router->get("$basePath/dashboard", "views/dashboard.view.php");
 
-//# Api
-$router->post("$top_dir/login", "api/login.php");
-$router->post("$top_dir/router", "api/register.php");
+    //# Api
+    $router->post("$basePath/login", "api/login.php");
+    $router->post("$basePath/router", "api/register.php");
 
-//# Errors
-$router->any("/404", "views/errors/404.error.php");
+    //# Errors
+    $router->any("/404", "views/errors/404.error.php");
+
+    ?>
+  </body>
+</html>
