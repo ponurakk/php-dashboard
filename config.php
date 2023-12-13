@@ -1,4 +1,4 @@
 <?php
 // Base path of project
 // Leave empty for /
-$basePath = "";
+const BasePath = "/Lekcyje/php-dashboard";
