@@ -2,26 +2,11 @@
 
 class Router {
 	function get($route, $path_to_include) { $this->validate_method("GET", $route, $path_to_include); }
-
-	function post($route, $path_to_include) {
-		$this->validate_method("POST", $route, $path_to_include);
-	}
-
-	function put($route, $path_to_include) {
-		$this->validate_method("PUT", $route, $path_to_include);
-	}
-
-	function patch($route, $path_to_include) {
-		$this->validate_method("PATCH", $route, $path_to_include);
-	}
-
-	function delete($route, $path_to_include) {
-		$this->validate_method("DELETE", $route, $path_to_include);
-	}
-
-	function any($route, $path_to_include) {
-		$this->route($route, $path_to_include);
-	}
+	function post($route, $path_to_include) { $this->validate_method("POST", $route, $path_to_include); }
+	function put($route, $path_to_include) { $this->validate_method("PUT", $route, $path_to_include); }
+	function patch($route, $path_to_include) { $this->validate_method("PATCH", $route, $path_to_include); }
+	function delete($route, $path_to_include) { $this->validate_method("DELETE", $route, $path_to_include); }
+	function any($route, $path_to_include) { $this->route($route, $path_to_include); }
 
 	private function validate_method($method, $route, $path_to_include) {
 		if ($_SERVER["REQUEST_METHOD"] == $method) {
