@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +6,7 @@
     <title>Document</title>
     <link href="./static/index.css" rel="stylesheet">
   </head>
-  <body>
+  <body class="bg-black">
     <?php 
     require_once "./lib/router.php";
     include_once "config.php";
@@ -17,14 +15,14 @@
     $router = new Router();
 
     //# Views
-    $router->get("$basePath", "views/index.view.php");
-    $router->get("$basePath/login", "views/login.view.php");
-    $router->get("$basePath/register", "views/register.view.php");
-    $router->get("$basePath/dashboard", "views/dashboard.view.php");
+    $router->get(BasePath, "views/index.view.php");
+    $router->get(BasePath."/login", "views/login/login.view.php");
+    $router->get(BasePath."/register", "views/register.view.php");
+    $router->get(BasePath."/dashboard", "views/dashboard.view.php");
 
     //# Api
-    $router->post("$basePath/login", "api/login.php");
-    $router->post("$basePath/router", "api/register.php");
+    $router->post(BasePath."/login", "api/login.php");
+    $router->post(BasePath."/router", "api/register.php");
 
     //# Errors
     $router->any("/404", "views/errors/404.error.php");
