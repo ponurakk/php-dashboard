@@ -25,7 +25,9 @@ class Router {
 			die();
 		}
 
-		$request_url = filter_var($_SERVER['REQUEST_URI'], FILTER_SANITIZE_URL);
+		$request_url = filter_var($_SERVER["REQUEST_URI"], FILTER_SANITIZE_URL);
+		$request_url = str_replace($_SERVER["REQUEST_URI"], "/", $request_url);
+		$route = str_replace($_SERVER["REQUEST_URI"], "/", $route);
 		$route_parts = explode('/', $route);
 		$request_url_parts = explode('/', strtok(rtrim($request_url, '/'), '?'));
 
