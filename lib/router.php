@@ -1,5 +1,5 @@
 <?php
-include_once "../config.php";
+include_once "./config.php";
 
 class Router {
 	function get($route, $path_to_include) { $this->validate_method("GET", $route, $path_to_include); }

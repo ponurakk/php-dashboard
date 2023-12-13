@@ -1,7 +1,5 @@
-<?php
-include "./lib/utils.php";
-include "./config.php";
-?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,7 +12,8 @@ include "./config.php";
     <?php 
     require_once "./lib/router.php";
     include_once "config.php";
-
+    include "./lib/utils.php";
+    
     $router = new Router();
 
     //# Views

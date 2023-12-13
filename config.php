@@ -1,4 +1,4 @@
-<?php
+	<?php
 // Base path of project
 // Leave empty for /
-$basePath = "";
+$basePath = "/php-dashboard";
