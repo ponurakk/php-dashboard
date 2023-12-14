@@ -1,3 +1,4 @@
 <?php 
-header("location: /login");
-?>
+$router = new Router();
+
+$router->redirect("/login");

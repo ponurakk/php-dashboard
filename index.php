@@ -1,5 +1,6 @@
 <?php
 include "./lib/utils.php";
+include "./lib/icons.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -69,4 +69,8 @@ class Router {
 
 		return true;
 	}
+
+	public function redirect(string $route) {
+		header("Location: ".BasePath.$route);
+	}
 }
