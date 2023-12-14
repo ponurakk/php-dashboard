@@ -6,7 +6,7 @@
     <title>Document</title>
     <link href="./static/index.css" rel="stylesheet">
   </head>
-  <body class="bg-black">
+  <body class="bg-zinc-950">
     <?php 
     require_once "./lib/router.php";
     include_once "config.php";
