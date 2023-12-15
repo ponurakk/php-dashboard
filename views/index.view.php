@@ -1,4 +1,4 @@
-<div>
+
     <nav>
         <?php
         (new Render(ComponentType::Register, "Sign Up"))->as_form(BasePath."/register", "post");
@@ -6,7 +6,4 @@
         echo Icon::Lock->value;
         ?>
     </nav>
-    <header>
 
-    </header>
-</div>

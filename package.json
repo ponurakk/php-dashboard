@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "tailwindcss build app.css -i static/styles.css"
+    "build": "npx tailwindcss build -i app.css -o static/index.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.3.6"
