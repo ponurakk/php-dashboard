@@ -35,7 +35,7 @@ class Router {
 		array_shift($request_url_parts);
 
 		// Match index
-		if ($route_parts[0] == '' && count($request_url_parts) == 0) {
+		if (count($request_url_parts) == 0) {
 			include_once "./$path_to_include";
 			die();
 		}
@@ -68,5 +68,9 @@ class Router {
 		}
 
 		return true;
+	}
+
+	public function redirect(string $route) {
+		header("Location: ".BasePath.$route);
 	}
 }

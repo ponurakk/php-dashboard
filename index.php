@@ -1,3 +1,11 @@
+<?php 
+require_once "./lib/router.php";
+require_once "config.php";
+require_once "./lib/utils.php";
+require_once "./lib/database.php";
+include_once "./lib/icons.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,10 +24,6 @@
   </head>
   <body class="bg-black">
     <?php 
-    require_once "./lib/router.php";
-    include_once "config.php";
-    include "./lib/utils.php";
-    
     $router = new Router();
 
     //# Views
@@ -34,7 +38,6 @@
 
     //# Errors
     $router->any("/404", "views/errors/404.error.php");
-
     ?>
   </body>
 </html>
