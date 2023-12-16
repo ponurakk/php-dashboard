@@ -602,6 +602,10 @@ video {
   left: 33.333333%;
 }
 
+.right-0 {
+  right: 0px;
+}
+
 .z-20 {
   z-index: 20;
 }
@@ -1187,6 +1191,48 @@ video {
 }
 
 .hover\:animate-move-gradient-200:hover {
+  animation: move-gradient .5s forwards;
+}
+
+@keyframes move-gradient {
+  from {
+    background-position: -208;
+  }
+
+  to {
+    background-position: 0px;
+  }
+}
+
+.hover\:animate-move-gradient-\[208\]:hover {
+  animation: move-gradient .5s forwards;
+}
+
+@keyframes move-gradient {
+  from {
+    background-position: -208px;
+  }
+
+  to {
+    background-position: 0px;
+  }
+}
+
+.hover\:animate-move-gradient-\[208px\]:hover {
+  animation: move-gradient .5s forwards;
+}
+
+@keyframes move-gradient {
+  from {
+    background-position: -140px;
+  }
+
+  to {
+    background-position: 0px;
+  }
+}
+
+.hover\:animate-move-gradient-\[140px\]:hover {
   animation: move-gradient .5s forwards;
 }
 

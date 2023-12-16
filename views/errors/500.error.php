@@ -2,7 +2,8 @@
   <h1 class="text-4xl">500</h1>
   <h2 class="text-2xl">Internal Server Error</h2>
 </main>
-<div class="p-4 rounded-md shadow-md flex flex-col gap-4 absolute bottom-0 left-0">
+
+<div class="p-4 flex flex-col gap-4 absolute bottom-0 left-0">
 
   <div class="flex items-center gap-2 justify-start">
     <?php echo Icon::Bug->value ?>
@@ -34,4 +35,10 @@
     <p><?php echo $_POST[1]; ?></p>
   </div>
 
+</div>
+
+<div class="p-4 absolute bottom-0 right-0 flex flex-col gap-4">
+  <a href="/" class="bg-white px-6 py-3 font-bold text-black w-52 justify-center rounded-lg shadow-sm hover:bg-gradient-to-r hover:from-[#fc540c] hover:to-[#f5c57a] hover:text-white transition-all duration-300 hover:animate-move-gradient-[140px]">
+    Return Home
+  </a>
 </div>

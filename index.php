@@ -40,7 +40,7 @@ set_error_handler("exception_error_handler");
       }
     </style>
   </head>
-  <body class="bg-black max-h-screen text-white">
+  <body class="bg-black max-h-screen text-white relative">
     <div class="cursors">
       <div class="absolute w-8 h-8 bg-mouse-blob bg-[length:32px_32px] bg-no-repeat bg-center z-[100] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
       <div class="absolute w-8 h-8 bg-mouse-blob bg-[length:32px_32px] bg-no-repeat bg-center z-[100] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
