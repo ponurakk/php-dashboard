@@ -4,6 +4,12 @@ require_once "config.php";
 require_once "./lib/utils.php";
 require_once "./lib/database.php";
 include_once "./lib/icons.php";
+
+function exception_error_handler($errno, $errstr, $errfile, $errline ) {
+  throw new ErrorException($errstr, $errno, 0, $errfile, $errline);
+}
+
+set_error_handler("exception_error_handler");
 ?>
 
 <!DOCTYPE html>
@@ -46,18 +52,25 @@ include_once "./lib/icons.php";
     <?php 
     $router = new Router();
 
-    //# Views
-    $router->get(BasePath, "views/index.view.php");
-    $router->get(BasePath."/login", "views/login/login.view.php");
-    $router->get(BasePath."/register", "views/login/register.view.php");
-    $router->get(BasePath."/dashboard", "views/dashboard.view.php");
+    try {
+      //# Views
+      $router->get(BasePath, "views/index.view.php");
+      $router->get(BasePath."/login", "views/login/login.view.php");
+      $router->get(BasePath."/register", "views/login/register.view.php");
+      $router->get(BasePath."/dashboard", "views/dashboard.view.php");
 
-    //# Api
-    $router->post(BasePath."/login", "api/login.php");
-    $router->post(BasePath."/router", "api/register.php");
+      //# Api
+      $router->post(BasePath."/login", "api/login.php");
+      $router->post(BasePath."/router", "api/register.php");
 
-    //# Errors
-    $router->any("/404", "views/errors/404.error.php");
+      //# Errors
+      $router->any("/500", "views/errors/500.error.php");
+      $router->any("/404", "views/errors/404.error.php");
+    } catch (Exception $e) {
+      $router->errorRedirect("/500", $e);
+      // echo $e->getMessage();
+    }
+
     ?>
   </body>
 </html>

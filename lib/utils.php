@@ -5,6 +5,7 @@ enum ComponentType: string {
   public const Register = self::Login;
   case PasswordButton = 'passwordButton';
   case MemberTxt = 'memberTxt';
+  case ErrorRedirect = 'errorRedirect';
 }
 
 class Render {
