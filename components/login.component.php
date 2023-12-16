@@ -1,13 +1,13 @@
-<div class="flex flex-col justify-center px-6 py-12 w-96 lg:px-8  rounded-lg relative bg-black button-shadow">
-  <div class="flex justify-center items-center absolute bg-white -top-5 left-1/3 h-1/6 w-1/3 rounded-lg ">
+<div class="flex flex-col justify-center px-6 py-12 w-96 lg:px-8 rounded-lg relative bg-black before:absolute before:left-0 before:top-0 before:w-full before:h-full before:-z-10 before:blur-lg before:animate-blur-pulse before:bg-primary-radial">
+  <div class="flex justify-center items-center absolute bg-white -top-5 left-1/3 h-1/6 w-1/3 rounded-lg text-black">
     <p class="text-3xl font-bold"><?php echo $args[1] ?></p>
   </div>  
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-    <form class="space-y-6" action="<?php echo $action ?>" method="<?php echo $method ?>">
+    <form class="space-y-6" autocomplete="off" action="<?php echo $action ?>" method="<?php echo $method ?>">
       <div>
         <label for="email" class="block font-large text-lg font-medium leading-6 text-neutral-400">Email address</label>
         <div class="mt-2">
-          <input id="email" name="email" type="email" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 sm:text-sm sm:leading-6">
+          <input id="email" name="email" type="email" autocomplete="off"  required class="block w-full rounded-md border-0 py-1.5 text-gray-900 sm:text-sm sm:leading-6">
         </div>
       </div>
 
@@ -21,7 +21,7 @@
       ?>
 
       <div class="flex justify-center">
-        <button class="button-shadow bg-white px-6 py-3 font-bold text-black w-1/2 justify-center rounded-lg shadow-sm hover:bg-gradient-to-r         hover:from-[#fc540c] hover:to-[#f5c57a] hover:text-white transition duration-300">
+        <button class="bg-white px-6 py-3 font-bold text-black w-1/2 justify-center rounded-lg shadow-sm hover:bg-gradient-to-r hover:from-[#fc540c] hover:to-[#f5c57a] hover:text-white transition duration-300 hover:animate-move-gradient-160">
           <?php echo $args[0] ?>
         </button>
       </div>
@@ -36,22 +36,3 @@
     ?>
   </div>
 </div>
-<style>
-  .button-shadow::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    background: rgb(245,197,122);
-    background: radial-gradient(circle, rgba(245,197,122,1) 0%, rgba(252,84,12,1) 100%);
-    filter: blur(20px);
-    animation: blurpulse 3s infinite alternate;
-  }
-  @keyframes blurpulse {
-    from {filter: blur(15px);}
-    to {filter: blur(30px);}
-  }
-</style>
