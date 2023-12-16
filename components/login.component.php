@@ -6,24 +6,21 @@
     <form class="space-y-6" autocomplete="off" action="<?php echo $action ?>" method="<?php echo $method ?>">
       <div>
         <label for="email" class="block font-large text-lg font-medium leading-6 text-neutral-400">Email address</label>
-        <div class="mt-2">
-          <input id="email" name="email" type="email" autocomplete="off"  required class="block w-full rounded-md border-0 py-1.5 text-gray-900 sm:text-sm sm:leading-6">
+        <div class="mt-2 relative">
+          <div class="text-black absolute left-1 top-1/2 -translate-y-1/2"><?php echo Icon::Mail->value ?></div>
+          <input id="email" name="email" type="email" autocomplete="off" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 sm:text-lg sm:leading-6 focus:outline-none pl-9">
         </div>
       </div>
 
       <?php
-
         (new Render(ComponentType::PasswordButton, "Password"))->render();
         if($action == BasePath."/register"){
-
           (new Render(ComponentType::PasswordButton, "Repeat password"))->render();
         }
       ?>
 
       <div class="flex justify-center">
-        <button class="bg-white px-6 py-3 font-bold text-black w-1/2 justify-center rounded-lg shadow-sm hover:bg-gradient-to-r hover:from-[#fc540c] hover:to-[#f5c57a] hover:text-white transition duration-300 hover:animate-move-gradient-160">
-          <?php echo $args[0] ?>
-        </button>
+        <input type="submit" class="bg-white bg-no-repeat px-6 py-3 font-bold text-black w-1/2 justify-center rounded-lg bg-primary-linear transition-all duration-300 ease-out bg-[length:200%] text-xl bg-[200%] hover:bg-[100%] clickable hover:text-white" value="<?php echo $args[0] ?>">
       </div>
     </form>
     <?php

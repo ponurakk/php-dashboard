@@ -598,12 +598,20 @@ video {
   left: 0px;
 }
 
+.left-1 {
+  left: 0.25rem;
+}
+
 .left-1\/3 {
   left: 33.333333%;
 }
 
 .right-0 {
   right: 0px;
+}
+
+.top-1\/2 {
+  top: 50%;
 }
 
 .z-20 {
@@ -687,6 +695,10 @@ video {
   width: 33.333333%;
 }
 
+.w-4\/5 {
+  width: 80%;
+}
+
 .w-52 {
   width: 13rem;
 }
@@ -705,14 +717,6 @@ video {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-2\/3 {
-  width: 66.666667%;
-}
-
-.w-4\/5 {
-  width: 80%;
 }
 
 .-translate-x-1\/2 {
@@ -755,10 +759,6 @@ video {
 
 .gap-4 {
   gap: 1rem;
-}
-
-.gap-8 {
-  gap: 2rem;
 }
 
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
@@ -815,6 +815,10 @@ video {
   background-image: url('/static/mouseBlob.png');
 }
 
+.bg-primary-linear {
+  background-image: linear-gradient(90deg, rgba(245,197,122,1) 0%, rgba(252,84,12,1) 100%);
+}
+
 .from-\[\#fc540c\] {
   --tw-gradient-from: #fc540c var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(252 84 12 / 0) var(--tw-gradient-to-position);
@@ -823,6 +827,10 @@ video {
 
 .to-\[\#f5c57a\] {
   --tw-gradient-to: #f5c57a var(--tw-gradient-to-position);
+}
+
+.bg-\[length\:200\%\] {
+  background-size: 200%;
 }
 
 .bg-\[length\:32px_32px\] {
@@ -834,104 +842,36 @@ video {
           background-clip: text;
 }
 
-.bg-\[10\%_84\%\] {
-  background-position: 10% 84%;
+.bg-\[100\%_70\%\] {
+  background-position: 100% 70%;
 }
 
-.bg-\[30\%_20\%\] {
-  background-position: 30% 20%;
-}
-
-.bg-\[40\%_14\%\] {
-  background-position: 40% 14%;
-}
-
-.bg-\[40\%_80\%\] {
-  background-position: 40% 80%;
-}
-
-.bg-\[80\%_-40\%\] {
-  background-position: 80% -40%;
-}
-
-.bg-\[80\%_10\%\] {
-  background-position: 80% 10%;
-}
-
-.bg-center {
-  background-position: center;
-}
-
-.bg-\[40\%_50\%\] {
-  background-position: 40% 50%;
-}
-
-.bg-\[80\%_40\%\] {
-  background-position: 80% 40%;
-}
-
-.bg-\[40\%_40\%\] {
-  background-position: 40% 40%;
+.bg-\[200\%\] {
+  background-position: 200%;
 }
 
 .bg-\[30\%_40\%\] {
   background-position: 30% 40%;
 }
 
-.bg-\[20\%_40\%\] {
-  background-position: 20% 40%;
+.bg-\[40\%_14\%\] {
+  background-position: 40% 14%;
 }
 
-.bg-\[30\%_10\%\] {
-  background-position: 30% 10%;
+.bg-\[40\%_50\%\] {
+  background-position: 40% 50%;
 }
 
-.bg-\[40\%_60\%\] {
-  background-position: 40% 60%;
-}
-
-.bg-\[80\%_30\%\] {
-  background-position: 80% 30%;
-}
-
-.bg-\[80\%_50\%\] {
-  background-position: 80% 50%;
-}
-
-.bg-\[90\%_40\%\] {
-  background-position: 90% 40%;
+.bg-\[40\%_70\%\] {
+  background-position: 40% 70%;
 }
 
 .bg-\[70\%_40\%\] {
   background-position: 70% 40%;
 }
 
-.bg-\[40\%_84\%\] {
-  background-position: 40% 84%;
-}
-
-.bg-\[90\%_20\%\] {
-  background-position: 90% 20%;
-}
-
-.bg-\[100\%_20\%\] {
-  background-position: 100% 20%;
-}
-
-.bg-\[100\%_90\%\] {
-  background-position: 100% 90%;
-}
-
-.bg-\[100\%_80\%\] {
-  background-position: 100% 80%;
-}
-
-.bg-\[100\%_70\%\] {
-  background-position: 100% 70%;
-}
-
-.bg-\[40\%_70\%\] {
-  background-position: 40% 70%;
+.bg-center {
+  background-position: center;
 }
 
 .bg-no-repeat {
@@ -979,6 +919,10 @@ video {
 .py-36 {
   padding-top: 9rem;
   padding-bottom: 9rem;
+}
+
+.pl-9 {
+  padding-left: 2.25rem;
 }
 
 .text-center {
@@ -1061,20 +1005,6 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-sm {
-  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1083,6 +1013,10 @@ video {
 
 .duration-300 {
   transition-duration: 300ms;
+}
+
+.ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
 .before\:absolute::before {
@@ -1143,18 +1077,8 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.hover\:bg-gradient-to-r:hover {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-}
-
-.hover\:from-\[\#fc540c\]:hover {
-  --tw-gradient-from: #fc540c var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(252 84 12 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.hover\:to-\[\#f5c57a\]:hover {
-  --tw-gradient-to: #f5c57a var(--tw-gradient-to-position);
+.hover\:bg-\[100\%\]:hover {
+  background-position: 100%;
 }
 
 .hover\:text-white:hover {
@@ -1166,74 +1090,9 @@ video {
   text-decoration-line: underline;
 }
 
-@keyframes move-gradient {
-  from {
-    background-position: -160px;
-  }
-
-  to {
-    background-position: 0px;
-  }
-}
-
-.hover\:animate-move-gradient-160:hover {
-  animation: move-gradient .5s forwards;
-}
-
-@keyframes move-gradient {
-  from {
-    background-position: -200px;
-  }
-
-  to {
-    background-position: 0px;
-  }
-}
-
-.hover\:animate-move-gradient-200:hover {
-  animation: move-gradient .5s forwards;
-}
-
-@keyframes move-gradient {
-  from {
-    background-position: -208;
-  }
-
-  to {
-    background-position: 0px;
-  }
-}
-
-.hover\:animate-move-gradient-\[208\]:hover {
-  animation: move-gradient .5s forwards;
-}
-
-@keyframes move-gradient {
-  from {
-    background-position: -208px;
-  }
-
-  to {
-    background-position: 0px;
-  }
-}
-
-.hover\:animate-move-gradient-\[208px\]:hover {
-  animation: move-gradient .5s forwards;
-}
-
-@keyframes move-gradient {
-  from {
-    background-position: -140px;
-  }
-
-  to {
-    background-position: 0px;
-  }
-}
-
-.hover\:animate-move-gradient-\[140px\]:hover {
-  animation: move-gradient .5s forwards;
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 @media (min-width: 640px) {
@@ -1250,9 +1109,9 @@ video {
     max-width: 24rem;
   }
 
-  .sm\:text-sm {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+  .sm\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 
   .sm\:leading-6 {

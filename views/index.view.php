@@ -21,7 +21,7 @@
         <p class="text-lg mb-8">Delivering your packages safely and on time!</p>
 
         <div class="flex justify-center">
-          <a href="/dashboard" class="bg-white px-6 py-3 font-bold text-black w-52 justify-center rounded-lg shadow-sm hover:bg-gradient-to-r hover:from-[#fc540c] hover:to-[#f5c57a] hover:text-white transition-all duration-300 hover:animate-move-gradient-200 clickable">
+          <a href="/dashboard" class="bg-white bg-no-repeat px-6 py-3 font-bold text-black w-52 justify-center rounded-lg bg-primary-linear transition-all duration-300 ease-out bg-[length:200%] text-xl bg-[200%] hover:bg-[100%] clickable hover:text-white">
             Dashboard
           </a>
         </div>
@@ -77,7 +77,7 @@
       <p class="text-lg mb-6">Experience seamless delivery services that prioritize speed and security. Your packages, our priority.</p>
 
       <div class="flex justify-center">
-        <a href="/about" class="bg-white px-6 py-3 font-bold text-black w-52 justify-center rounded-lg shadow-sm hover:bg-gradient-to-r hover:from-[#fc540c] hover:to-[#f5c57a] hover:text-white transition-all duration-300 hover:animate-move-gradient-200">
+        <a href="/about" class="bg-white bg-no-repeat px-6 py-3 font-bold text-black w-52 justify-center rounded-lg bg-primary-linear transition-all duration-300 ease-out bg-[length:200%] bg-[200%] hover:bg-[100%] clickable hover:text-white">
           Learn More
         </a>
       </div>
