@@ -2,6 +2,7 @@
 $env = parse_ini_file(".env");
 
 define("BasePath", $env["BASEPATH"]);
+define("CropPath", $env["CROPPATH"]);
 define("Debug", $env["DEBUG"]);
 define("Hostname", $env["HOSTNAME"]);
 define("Username", $env["USERNAME"]);

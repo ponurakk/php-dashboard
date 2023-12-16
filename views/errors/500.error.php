@@ -18,7 +18,11 @@
       $stack = preg_split("/#\d* /", $_POST[2]);
       array_shift($stack);
       foreach ($stack as $key => $value) {
-        echo "#" . $key . " " . $value . "<br/>";
+        if (str_starts_with($value, CropPath)) {
+          echo "#" . $key . " " . substr($value, strlen(CropPath)) . "<br/>";
+        } else {
+          echo "#" . $key . " " . $value . "<br/>";
+        }
       }
       ?>
     </p>

@@ -34,34 +34,34 @@
   <section class="py-36">
     <div class="container mx-auto text-center">
       <h2 class="text-3xl font-bold mb-6">Our Services</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      <div class="grid grid-cols-1 w-4/5 m-auto md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
 
-        <div class="bg-box-blob bg-[40%_14%] p-6 rounded-md shadow-md">
+        <div class="bg-box-blob bg-[40%_14%] p-6 rounded-xl shadow-md">
           <h3 class="text-xl font-bold mb-4">Express Delivery</h3>
           <p>Get your packages delivered with speed and efficiency using our express delivery service.</p>
         </div>
 
-        <div class="bg-box-blob bg-[40%_50%] p-6 rounded-md shadow-md">
+        <div class="bg-box-blob bg-[40%_50%] p-6 rounded-xl shadow-md">
           <h3 class="text-xl font-bold mb-4">Package Tracking</h3>
           <p>Track your packages in real-time and stay updated on their current location and delivery status.</p>
         </div>
 
-        <div class="bg-box-blob bg-[40%_70%] p-6 rounded-md shadow-md">
+        <div class="bg-box-blob bg-[40%_70%] p-6 rounded-xl shadow-md">
           <h3 class="text-xl font-bold mb-4">Secure Packaging</h3>
           <p>We ensure that your packages are securely packed to prevent any damage during transit.</p>
         </div>
 
-        <div class="bg-box-blob bg-[100%_70%] p-6 rounded-md shadow-md">
+        <div class="bg-box-blob bg-[100%_70%] p-6 rounded-xl shadow-md">
           <h3 class="text-xl font-bold mb-4">International Shipping</h3>
           <p>Ship your packages globally with our reliable international shipping services.</p>
         </div>
 
-        <div class="bg-box-blob bg-[30%_40%] p-6 rounded-md shadow-md">
+        <div class="bg-box-blob bg-[30%_40%] p-6 rounded-xl shadow-md">
           <h3 class="text-xl font-bold mb-4">Same-Day Delivery</h3>
           <p>Experience the convenience of same-day delivery for your urgent shipments.</p>
         </div>
 
-        <div class="bg-box-blob bg-[70%_40%] p-6 rounded-md shadow-md">
+        <div class="bg-box-blob bg-[70%_40%] p-6 rounded-xl shadow-md">
           <h3 class="text-xl font-bold mb-4">Eco-Friendly Packaging</h3>
           <p>Contribute to the environment with our eco-friendly packaging options for your parcels.</p>
         </div>
@@ -77,9 +77,9 @@
       <p class="text-lg mb-6">Experience seamless delivery services that prioritize speed and security. Your packages, our priority.</p>
 
       <div class="flex justify-center">
-        <button class="bg-white px-6 py-3 font-bold text-black w-52 justify-center rounded-lg shadow-sm hover:bg-gradient-to-r hover:from-[#fc540c] hover:to-[#f5c57a] hover:text-white transition-all duration-300 hover:animate-move-gradient-200">
+        <a href="/about" class="bg-white px-6 py-3 font-bold text-black w-52 justify-center rounded-lg shadow-sm hover:bg-gradient-to-r hover:from-[#fc540c] hover:to-[#f5c57a] hover:text-white transition-all duration-300 hover:animate-move-gradient-200">
           Learn More
-        </button>
+        </a>
       </div>
 
     </div>

@@ -70,7 +70,6 @@ set_error_handler("exception_error_handler");
       $router->errorRedirect("/500", $e);
       // echo $e->getMessage();
     }
-
     ?>
   </body>
 </html>
