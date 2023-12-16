@@ -16,13 +16,33 @@ include_once "./lib/icons.php";
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-      *{
+      * {
         font-family: "Roboto";
       }
 
+      *, body, a {
+        cursor: url("/static/mouseBlob.png") 16 16, auto !important;
+      }
+
+      button, input, .clickable {
+        cursor: url("/static/mouseBlobBlack.png") 16 16, auto !important;
+      }
+
+      ::selection {
+        color: #ea580c;
+        background: #18181b;
+      }
     </style>
   </head>
-  <body class="bg-black">
+  <body class="bg-black max-h-screen text-white">
+    <div class="cursors">
+      <div class="absolute w-8 h-8 bg-mouse-blob bg-[length:32px_32px] bg-no-repeat bg-center z-[100] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute w-8 h-8 bg-mouse-blob bg-[length:32px_32px] bg-no-repeat bg-center z-[100] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute w-8 h-8 bg-mouse-blob bg-[length:32px_32px] bg-no-repeat bg-center z-[100] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute w-8 h-8 bg-mouse-blob bg-[length:32px_32px] bg-no-repeat bg-center z-[100] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute w-8 h-8 bg-mouse-blob bg-[length:32px_32px] bg-no-repeat bg-center z-[100] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
+    </div>
+
     <?php 
     $router = new Router();
 
