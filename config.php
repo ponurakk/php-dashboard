@@ -14,3 +14,5 @@ if (Debug == true) {
 } else {
   ini_set("display_errors", 0);
 }
+
+echo "<script>localStorage.setItem('BasePath', '".BasePath."');</script>";

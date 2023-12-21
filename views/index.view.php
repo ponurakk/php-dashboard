@@ -1,18 +1,7 @@
 <div class="bg-black text-white relative">
 
   <main class="bg-[40%_14%] bg-no-repeat object-contain bg-main-blob">
-    <nav class="p-4">
-      <div class="container mx-auto flex justify-between items-center">
-
-        <a href="/" class="text-white text-lg font-bold">Courier Service</a>
-        <ul class="flex space-x-4">
-          <li><a href="/" class="text-white hover:underline">Home</a></li>
-          <li><a href="/login" class="text-white hover:underline">Sign In</a></li>
-          <li><a href="/register" class="text-white hover:underline">Sign Up</a></li>
-        </ul>
-
-      </div>
-    </nav>
+    
 
     <header class="text-white h-screen w-screen flex items-center z-20">
       <div class="container mx-auto text-center">
@@ -21,7 +10,7 @@
         <p class="text-lg mb-8">Delivering your packages safely and on time!</p>
 
         <div class="flex justify-center">
-          <a href="/dashboard" class="bg-white bg-no-repeat px-6 py-3 font-bold text-black w-52 justify-center rounded-lg bg-primary-linear transition-all duration-300 ease-out bg-[length:200%] text-xl bg-[200%] hover:bg-[100%] clickable hover:text-white">
+          <a href=<?php echo BasePath."/dashboard"?> class="bg-white bg-no-repeat px-6 py-3 font-bold text-black w-52 justify-center rounded-lg bg-primary-linear transition-all duration-300 ease-out bg-[length:200%] text-xl bg-[200%] hover:bg-[100%] clickable hover:text-white">
             Dashboard
           </a>
         </div>
@@ -77,16 +66,11 @@
       <p class="text-lg mb-6">Experience seamless delivery services that prioritize speed and security. Your packages, our priority.</p>
 
       <div class="flex justify-center">
-        <a href="/about" class="bg-white bg-no-repeat px-6 py-3 font-bold text-black w-52 justify-center rounded-lg bg-primary-linear transition-all duration-300 ease-out bg-[length:200%] bg-[200%] hover:bg-[100%] clickable hover:text-white">
+        <a href=<?php echo BasePath."/about"?> class="bg-white bg-no-repeat px-6 py-3 font-bold text-black w-52 justify-center rounded-lg bg-primary-linear transition-all duration-300 ease-out bg-[length:200%] bg-[200%] hover:bg-[100%] clickable hover:text-white">
           Learn More
         </a>
       </div>
 
     </div>
   </section>
-
-  <footer class="text-white p-4 text-center">
-    <p>&copy; 2023 ponurakk & spaceKumpel. All rights reserved.</p>
-  </footer>
-
 </div>

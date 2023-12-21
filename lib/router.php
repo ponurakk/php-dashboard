@@ -1,5 +1,6 @@
 <?php
 include_once "./config.php";
+include_once "./lib/utils.php";
 
 class Router {
 	function get($route, $path_to_include) { $this->validate_method("GET", $route, $path_to_include); }
@@ -23,7 +24,7 @@ class Router {
 		// Match 404 page
 		if ($route == "/404") {
 			include_once "./$path_to_include";
-			echo '<script src="/scripts/cursors.js"></script>';
+			echo '<script src="'.BasePath.'/scripts/cursors.js"></script>';
 			die();
 		}
 
@@ -38,7 +39,8 @@ class Router {
 		// Match index
 		if (count($request_url_parts) == 0) {
 			include_once "./$path_to_include";
-			echo '<script src="/scripts/cursors.js"></script>';
+			(new Render(ComponentType::Footer))->render();
+			echo '<script src="'.BasePath.'/scripts/cursors.js"></script>';
 			die();
 		}
 
@@ -49,9 +51,11 @@ class Router {
 
 		try {
 			require_once "./$path_to_include";
-			echo '<script src="/scripts/cursors.js"></script>';
+			(new Render(ComponentType::Footer))->render();
+			echo '<script src="'.BasePath.'/scripts/cursors.js"></script>';
 		} catch (Exception $e) {
-			echo '<script src="/scripts/cursors.js"></script>';
+			(new Render(ComponentType::Footer))->render();
+			echo '<script src="'.BasePath.'/scripts/cursors.js"></script>';
 			throw $e;
 		}
 		die();
@@ -83,6 +87,6 @@ class Router {
 	}
 
 	public function errorRedirect(string $route, $e) {
-		(new Render(ComponentType::ErrorRedirect, $route, [$e->getMessage(), $e->getLine(), $e->getTraceAsString()]))->render();
+		(new Render(ComponentType::ErrorRedirect, BasePath.$route, [$e->getMessage(), $e->getLine(), $e->getTraceAsString()]))->render();
 	}
 }

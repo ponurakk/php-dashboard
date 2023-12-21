@@ -6,6 +6,11 @@ enum ComponentType: string {
   case PasswordButton = 'passwordButton';
   case MemberTxt = 'memberTxt';
   case ErrorRedirect = 'errorRedirect';
+  case NavBar = 'navBar';
+  case Box = 'box';
+  case Row = 'row';
+  case SideBar = 'sideBar';
+  case Footer = 'footer';
 }
 
 class Render {
@@ -22,8 +27,18 @@ class Render {
     include "./components/".$this->component.".component.php";
   }
 
-  function as_form(string $action, string $method) {
+  function render_form(string $action, string $method) {
     $args = $this->args;
-    include "./components/".$this->component.".component.php";
+    include "./components/login/".$this->component.".component.php";
+  }
+
+  function render_login() {
+    $args = $this->args;
+    include "./components/login/".$this->component.".component.php";
+  }
+
+  function render_dash() {
+    $args = $this->args;
+    include "./components/dashboard/".$this->component.".component.php";
   }
 }

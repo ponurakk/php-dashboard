@@ -27,11 +27,11 @@ set_error_handler("exception_error_handler");
       }
 
       *, body, a {
-        cursor: url("/static/mouseBlob.png") 16 16, auto !important;
+        cursor: url("./static/mouseBlob.png") 16 16, auto !important;
       }
 
       button, input, .clickable {
-        cursor: url("/static/mouseBlobBlack.png") 16 16, auto !important;
+        cursor: url("./static/mouseBlobBlack.png") 16 16, auto !important;
       }
 
       ::selection {
@@ -41,6 +41,9 @@ set_error_handler("exception_error_handler");
     </style>
   </head>
   <body class="bg-black max-h-screen text-white relative">
+  <?php
+    (new Render(ComponentType::NavBar, "Repeat"))->render();
+  ?>
     <div class="cursors">
       <div class="absolute w-8 h-8 bg-mouse-blob bg-[length:32px_32px] bg-no-repeat bg-center z-[100] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
       <div class="absolute w-8 h-8 bg-mouse-blob bg-[length:32px_32px] bg-no-repeat bg-center z-[100] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
@@ -57,14 +60,14 @@ set_error_handler("exception_error_handler");
       $router->get(BasePath, "views/index.view.php");
       $router->get(BasePath."/login", "views/login/login.view.php");
       $router->get(BasePath."/register", "views/login/register.view.php");
-      $router->get(BasePath."/dashboard", "views/dashboard.view.php");
+      $router->get(BasePath."/dashboard", "views/dashboard/dashboard.view.php");
 
       //# Api
       $router->post(BasePath."/login", "api/login.php");
       $router->post(BasePath."/router", "api/register.php");
 
       //# Errors
-      $router->any("/500", "views/errors/500.error.php");
+      $router->any(BasePath."/500", "views/errors/500.error.php");
       $router->any("/404", "views/errors/404.error.php");
     } catch (Exception $e) {
       $router->errorRedirect("/500", $e);
