@@ -6,7 +6,7 @@ class Database {
   function __construct() {
     $this->conn = mysqli_connect(Hostname, Username, Password);
     $this->conn->select_db(DatabaseName);
-    session_start();
+    if (session_status() !== PHP_SESSION_ACTIVE) session_start();
   }
 
   function __destruct() {
@@ -40,17 +40,22 @@ class Database {
     $query->bind_result($id, $userLogin, $userPass);
     $query->fetch();
 
-    if ($query->num_rows() == 1) {
-      if (password_verify($pass, $userPass)) {
-        echo "Login i hasło zgodne";
-      } else {
-        $_SESSION["id"] = $id;
-        $_SESSION["login"] = $user;
-        $_SESSION["password"] = $userPass;
-      }
+    if (!isset($id)) {
+      // TODO: show notification instead of just returning
+      return;
+    }
+
+    // if ($query->num_rows == 1) {
+    if (password_verify($pass, $userPass)) {
+      $_SESSION["id"] = $id;
+      $_SESSION["login"] = $user;
+      $_SESSION["password"] = $userPass;
     } else {
       echo "Invalid data";
     }
+    // } else {
+    //   echo "Invalid data";
+    // }
   }
 
   public function checkValidLogin(): bool {
@@ -69,5 +74,13 @@ class Database {
     }
 
     return false;
+  }
+
+  public function logout() {
+    unset($_SESSION["id"]);
+    unset($_SESSION["login"]);
+    unset($_SESSION["password"]);
+    $router = new Router();
+    $router->redirect("/");
   }
 }

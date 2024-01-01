@@ -2,22 +2,29 @@
 include_once "./config.php";
 
 class Router {
-	function get($route, $path_to_include) { $this->validate_method("GET", $route, $path_to_include); }
-	function post($route, $path_to_include) { $this->validate_method("POST", $route, $path_to_include); }
-	function put($route, $path_to_include) { $this->validate_method("PUT", $route, $path_to_include); }
-	function patch($route, $path_to_include) { $this->validate_method("PATCH", $route, $path_to_include); }
-	function delete($route, $path_to_include) { $this->validate_method("DELETE", $route, $path_to_include); }
-	function any($route, $path_to_include) { $this->route($route, $path_to_include); }
+	function get($route, $path_to_include, $is_protected = false) { $this->validate_method("GET", $route, $path_to_include, $is_protected); }
+	function post($route, $path_to_include, $is_protected = false) { $this->validate_method("POST", $route, $path_to_include, $is_protected); }
+	function put($route, $path_to_include, $is_protected = false) { $this->validate_method("PUT", $route, $path_to_include, $is_protected); }
+	function patch($route, $path_to_include, $is_protected = false) { $this->validate_method("PATCH", $route, $path_to_include, $is_protected); }
+	function delete($route, $path_to_include, $is_protected = false) { $this->validate_method("DELETE", $route, $path_to_include, $is_protected); }
+	function any($route, $path_to_include, $is_protected = false) { $this->route($route, $path_to_include, $is_protected); }
 
-	private function validate_method($method, $route, $path_to_include) {
+	private function validate_method($method, $route, $path_to_include, $is_protected) {
 		if ($_SERVER["REQUEST_METHOD"] == $method) {
-			$this->route($route, $path_to_include);
+			$this->route($route, $path_to_include, $is_protected);
 		}
 	}
 
-	private function route($route, $path_to_include) {
+	private function route($route, $path_to_include, $is_protected) {
 		if (!strpos($path_to_include, '.php')) {
 			$path_to_include .= '.php';
+		}
+
+		if ($is_protected == true) {
+			$db = new Database();
+			if (!$db->checkValidLogin()) {
+				$this->redirect("/login");
+			}
 		}
 
 		// Match 404 page
