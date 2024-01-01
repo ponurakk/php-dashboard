@@ -61,7 +61,7 @@ set_error_handler("exception_error_handler");
 
       //# Api
       $router->post(BasePath."/login", "api/login.php");
-      $router->post(BasePath."/router", "api/register.php");
+      $router->post(BasePath."/register", "api/register.php");
 
       //# Errors
       $router->any("/500", "views/errors/500.error.php");
