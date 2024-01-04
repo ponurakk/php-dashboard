@@ -622,24 +622,16 @@ video {
   top: 50%;
 }
 
+.z-10 {
+  z-index: 10;
+}
+
 .z-20 {
   z-index: 20;
 }
 
 .z-\[100\] {
   z-index: 100;
-}
-
-.z-10 {
-  z-index: 10;
-}
-
-.z-50 {
-  z-index: 50;
-}
-
-.-z-20 {
-  z-index: -20;
 }
 
 .col-span-3 {
@@ -750,6 +742,15 @@ video {
   height: 100vh;
 }
 
+.h-max {
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.h-full {
+  height: 100%;
+}
+
 .max-h-screen {
   max-height: 100vh;
 }
@@ -802,6 +803,15 @@ video {
   width: 100vw;
 }
 
+.w-80 {
+  width: 20rem;
+}
+
+.w-max {
+  width: -moz-max-content;
+  width: max-content;
+}
+
 .max-w-7xl {
   max-width: 80rem;
 }
@@ -814,20 +824,6 @@ video {
 .-translate-y-1\/2 {
   --tw-translate-y: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-@keyframes blur-pulse {
-  from {
-    filter: blur(15px);
-  }
-
-  to {
-    filter: blur(20px);
-  }
-}
-
-.animate-blur-pulse {
-  animation: blur-pulse 3s infinite alternate;
 }
 
 .grid-cols-1 {
@@ -844,6 +840,10 @@ video {
 
 .flex-col {
   flex-direction: column;
+}
+
+.items-start {
+  align-items: flex-start;
 }
 
 .items-center {
@@ -950,6 +950,21 @@ video {
 .border-slate-700 {
   --tw-border-opacity: 1;
   border-color: rgb(51 65 85 / var(--tw-border-opacity));
+}
+
+.border-orange-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(253 186 116 / var(--tw-border-opacity));
+}
+
+.border-orange-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(249 115 22 / var(--tw-border-opacity));
+}
+
+.border-orange-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(194 65 12 / var(--tw-border-opacity));
 }
 
 .bg-black {
@@ -1302,16 +1317,6 @@ video {
   z-index: -10;
 }
 
-.before\:z-20::before {
-  content: var(--tw-content);
-  z-index: 20;
-}
-
-.before\:z-10::before {
-  content: var(--tw-content);
-  z-index: 10;
-}
-
 .before\:h-full::before {
   content: var(--tw-content);
   height: 100%;
@@ -1363,6 +1368,11 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.hover\:text-\[\#f5c57a\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(245 197 122 / var(--tw-text-opacity));
+}
+
 .hover\:underline:hover {
   text-decoration-line: underline;
 }
@@ -1375,6 +1385,11 @@ video {
 .group:hover .group-hover\:text-indigo-400 {
   --tw-text-opacity: 1;
   color: rgb(129 140 248 / var(--tw-text-opacity));
+}
+
+.group:hover .group-hover\:text-\[\#f5c57a\] {
+  --tw-text-opacity: 1;
+  color: rgb(245 197 122 / var(--tw-text-opacity));
 }
 
 @media (min-width: 640px) {
