@@ -7,14 +7,24 @@ enum ComponentType: string {
   case MemberTxt = 'memberTxt';
   case ErrorRedirect = 'errorRedirect';
   case NavBar = 'navBar';
-  case Box = 'box';
-  case Row = 'row';
   case SideBar = 'sideBar';
   case Footer = 'footer';
+
+  // Dashboard sites
   case Couriers = 'dashboard/couriers';
   case Departments = 'dashboard/departments';
   case Status = 'dashboard/status';
   case Vehicles = 'dashboard/vehicles';
+
+  // Table Rows
+  case CourierRow = 'courierRow';
+  case DepartmentRow = 'departmentRow';
+  case VehicleRow = 'vehicleRow';
+
+  // Add to database
+  case AddDepartment = 'addDepartment';
+  case AddCourier = 'addCourier';
+  case AddVehicle = 'addVehicle';
 }
 
 class Render {
