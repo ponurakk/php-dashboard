@@ -11,6 +11,10 @@ enum ComponentType: string {
   case Row = 'row';
   case SideBar = 'sideBar';
   case Footer = 'footer';
+  case Couriers = 'dashboard/couriers';
+  case Departments = 'dashboard/departments';
+  case Status = 'dashboard/status';
+  case Vehicles = 'dashboard/vehicles';
 }
 
 class Render {
@@ -40,5 +44,9 @@ class Render {
   function render_dash() {
     $args = $this->args;
     include "./components/dashboard/".$this->component.".component.php";
+  }
+
+  function render_view() {
+    include "./views/".$this->component.".view.php";
   }
 }

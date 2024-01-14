@@ -18,7 +18,7 @@ set_error_handler("exception_error_handler");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="./static/index.css" rel="stylesheet">
+    <link href="<?php echo BasePath ?>/static/index.css" rel="stylesheet">
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
@@ -27,11 +27,11 @@ set_error_handler("exception_error_handler");
       }
 
       *, body, a {
-        cursor: url("./static/mouseBlob.png") 16 16, auto !important;
+        cursor: url("<?php echo BasePath ?>/static/mouseBlob.png") 16 16, auto !important;
       }
 
       button, input, .clickable {
-        cursor: url("./static/mouseBlobBlack.png") 16 16, auto !important;
+        cursor: url("<?php echo BasePath ?>/static/mouseBlobBlack.png") 16 16, auto !important;
       }
 
       ::selection {
@@ -60,7 +60,12 @@ set_error_handler("exception_error_handler");
       $router->get(BasePath, "views/index.view.php");
       $router->get(BasePath."/login", "views/login/login.view.php");
       $router->get(BasePath."/register", "views/login/register.view.php");
+
       $router->get(BasePath."/dashboard", "views/dashboard/dashboard.view.php");
+      $router->get(BasePath."/dashboard/couriers", "views/dashboard/dashboard.view.php");
+      $router->get(BasePath."/dashboard/departments", "views/dashboard/dashboard.view.php");
+      $router->get(BasePath."/dashboard/status", "views/dashboard/dashboard.view.php");
+      $router->get(BasePath."/dashboard/vehicles", "views/dashboard/dashboard.view.php");
 
       //# Api
       $router->post(BasePath."/login", "api/login.php");
