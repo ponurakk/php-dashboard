@@ -1,4 +1,5 @@
 <?php 
+ob_start();
 require_once "./lib/router.php";
 require_once "config.php";
 require_once "./lib/utils.php";
@@ -70,6 +71,18 @@ set_error_handler("exception_error_handler");
       //# Api
       $router->post(BasePath."/login", "api/login.php");
       $router->post(BasePath."/register", "api/register.php");
+
+      $router->get(BasePath."/api/couriers", "api/get_courier.php");
+      $router->post(BasePath."/api/couriers", "api/add_courier.php");
+      $router->delete(BasePath."/api/couriers", "api/remove_courier.php");
+
+      $router->get(BasePath."/api/departments", "api/get_department.php");
+      $router->post(BasePath."/api/departments", "api/add_department.php");
+      $router->delete(BasePath."/api/departments", "api/remove_department.php");
+
+      $router->get(BasePath."/api/vehicles", "api/get_vehicle.php");
+      $router->post(BasePath."/api/vehicles", "api/add_vehicle.php");
+      $router->delete(BasePath."/api/vehicles", "api/remove_vehicle.php");
 
       //# Errors
       $router->any(BasePath."/500", "views/errors/500.error.php");
