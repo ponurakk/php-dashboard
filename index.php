@@ -44,6 +44,9 @@ set_error_handler("exception_error_handler");
   <?php
     (new Render(ComponentType::NavBar))->render();
   ?>
+  <template id="asd">
+    adsfsdaf
+  </template>
     <div class="cursors">
       <div class="absolute w-8 h-8 bg-mouse-blob bg-[length:32px_32px] bg-no-repeat bg-center z-[100] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
       <div class="absolute w-8 h-8 bg-mouse-blob bg-[length:32px_32px] bg-no-repeat bg-center z-[100] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>

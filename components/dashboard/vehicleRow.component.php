@@ -23,8 +23,8 @@
     <td class="py-3 px-2"></td>
 </tr>
 <tr class="border-b border-orange-700 hover:bg-black/30">
-    <td class="py-3 px-2">Chevrolet</td>
-    <td class="py-3 px-2">Malibu</td>
+    <td class="py-3 px-2">BMW</td>
+    <td class="py-3 px-2">M3</td>
     <td class="py-3 px-2">PQR789</td>
     <td class="py-3 px-2">500 kg</td>
     <td class="py-3 px-2">HR Department</td>

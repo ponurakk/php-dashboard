@@ -8,25 +8,25 @@
     </div>
     <hr class="my-2 border-orange-700">
     <div id="menu" class="flex flex-col space-y-2 my-5">
-      <a href="/dashboard/couriers" class="hover:bg-white/10 transition duration-150 ease-linear rounded-lg py-3 px-2 group">
+      <a href="<?php echo BasePath?>/dashboard/couriers" class="hover:bg-white/10 transition duration-150 ease-linear rounded-lg py-3 px-2 group">
         <div class="flex flex-col space-y-2 space-x-2 md:flex-row md:space-y-0 justify-center items-center">
           <?php echo Icon::Briefcase->value ?>
           <p class="font-bold text-base lg:text-lg text-slate-200">Couriers</p>
         </div>
       </a>
-      <a href="/dashboard/departments" class="hover:bg-white/10 transition duration-150 ease-linear rounded-lg py-3 px-2 group">
+      <a href="<?php echo BasePath?>/dashboard/departments" class="hover:bg-white/10 transition duration-150 ease-linear rounded-lg py-3 px-2 group">
         <div class="relative flex flex-col space-y-2 space-x-2 md:flex-row md:space-y-0 justify-center items-center">
           <?php echo Icon::File->value ?>
           <p class="font-bold text-base lg:text-lg text-slate-200 leading-4">Departments</p>
         </div>
       </a>
-      <a href="/dashboard/vehicles" class="hover:bg-white/10 transition duration-150 ease-linear rounded-lg py-3 px-2 group">
+      <a href="<?php echo BasePath?>/dashboard/vehicles" class="hover:bg-white/10 transition duration-150 ease-linear rounded-lg py-3 px-2 group">
         <div class="flex flex-col space-y-2 space-x-2 md:flex-row md:space-y-0 justify-center items-center">
           <?php echo Icon::Car->value ?>
           <p class="font-bold text-base lg:text-lg text-slate-200 leading-4 ">Vehicles</p>
         </div>
       </a>
-      <a href="/dashboard/status" class="hover:bg-white/10 transition duration-150 ease-linear rounded-lg py-3 px-2 group">
+      <a href="<?php echo BasePath?>/dashboard/status" class="hover:bg-white/10 transition duration-150 ease-linear rounded-lg py-3 px-2 group">
         <div class="flex flex-col space-y-2 space-x-2 md:flex-row md:space-y-0 justify-center items-center">
           <?php echo Icon::FileHappy->value ?>
           <p class="font-bold text-base lg:text-lg text-slate-200 leading-4 ">Status</p>
