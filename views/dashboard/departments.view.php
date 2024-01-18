@@ -1,5 +1,5 @@
 <div class="flex justify-between w-full">
-<?php (new Render(ComponentType::AddDepartment, "Repeat"))->render_dash(); ?>
+<?php (new Render(ComponentType::AddDepartment))->render_dash(); ?>
 <div id="departments" class="flex-[1]">
   <h1 class="font-bold py-4 uppercase">Registered departments</h1>
   <div>
@@ -15,7 +15,7 @@
         <th class="text-left py-3 px-2">Email</th>
         <th class="text-left py-3 px-2 rounded-r-lg">Actions</th>
       </thead>
-      <?php (new Render(ComponentType::DepartmentRow, "Repeat"))->render_dash(); ?>
+      <?php (new Render(ComponentType::DepartmentRow))->render_dash(); ?>
     </table>
   </div>
 </div>

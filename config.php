@@ -1,6 +1,11 @@
 <?php
 $env = parse_ini_file(".env");
 
+if ($env == false) {
+  echo "<center>Please create an .env file</center>";
+  die();
+}
+
 define("BasePath", $env["BASEPATH"]);
 define("CropPath", $env["CROPPATH"]);
 define("Debug", $env["DEBUG"]);

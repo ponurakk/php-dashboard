@@ -42,7 +42,7 @@ set_error_handler("exception_error_handler");
   </head>
   <body class="bg-black max-h-screen text-white relative">
   <?php
-    (new Render(ComponentType::NavBar, "Repeat"))->render();
+    (new Render(ComponentType::NavBar))->render();
   ?>
     <div class="cursors">
       <div class="absolute w-8 h-8 bg-mouse-blob bg-[length:32px_32px] bg-no-repeat bg-center z-[100] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
@@ -61,15 +61,15 @@ set_error_handler("exception_error_handler");
       $router->get(BasePath."/login", "views/login/login.view.php");
       $router->get(BasePath."/register", "views/login/register.view.php");
 
-      $router->get(BasePath."/dashboard", "views/dashboard/dashboard.view.php");
-      $router->get(BasePath."/dashboard/couriers", "views/dashboard/dashboard.view.php");
-      $router->get(BasePath."/dashboard/departments", "views/dashboard/dashboard.view.php");
-      $router->get(BasePath."/dashboard/status", "views/dashboard/dashboard.view.php");
-      $router->get(BasePath."/dashboard/vehicles", "views/dashboard/dashboard.view.php");
+      $router->get(BasePath."/dashboard", "views/dashboard/dashboard.view.php", true);
+      $router->get(BasePath."/dashboard/couriers", "views/dashboard/dashboard.view.php", true);
+      $router->get(BasePath."/dashboard/departments", "views/dashboard/dashboard.view.php", true);
+      $router->get(BasePath."/dashboard/status", "views/dashboard/dashboard.view.php", true);
+      $router->get(BasePath."/dashboard/vehicles", "views/dashboard/dashboard.view.php", true);
 
       //# Api
       $router->post(BasePath."/login", "api/login.php");
-      $router->post(BasePath."/router", "api/register.php");
+      $router->post(BasePath."/register", "api/register.php");
 
       //# Errors
       $router->any(BasePath."/500", "views/errors/500.error.php");
