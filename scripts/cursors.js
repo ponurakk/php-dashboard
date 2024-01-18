@@ -1,3 +1,5 @@
+const BasePath = localStorage.getItem("BasePath");
+console.log(BasePath);
 const cursorTag = document.querySelector("div.cursors");
 const balls = cursorTag.querySelectorAll("div");
 const buttons = document.querySelectorAll("button, input, .clickable");
@@ -33,13 +35,13 @@ document.addEventListener("mousemove", (e) => {
 buttons.forEach(btn => {
   btn.addEventListener("mouseover", () => {
     balls.forEach(ball => {
-      ball.style.backgroundImage = "url(/static/mouseBlobBlack.png)";
+      ball.style.backgroundImage = `url('${BasePath}/static/mouseBlobBlack.png')`;
     })
   })
 
   btn.addEventListener("mouseout", () => {
     balls.forEach(ball => {
-      ball.style.backgroundImage = "url(/static/mouseBlob.png)";
+      ball.style.backgroundImage = `url('${BasePath}/static/mouseBlob.png')`;
     })
   })
 })

@@ -6,6 +6,25 @@ enum ComponentType: string {
   case PasswordButton = 'passwordButton';
   case MemberTxt = 'memberTxt';
   case ErrorRedirect = 'errorRedirect';
+  case NavBar = 'navBar';
+  case SideBar = 'sideBar';
+  case Footer = 'footer';
+
+  // Dashboard sites
+  case Couriers = 'dashboard/couriers';
+  case Departments = 'dashboard/departments';
+  case Status = 'dashboard/status';
+  case Vehicles = 'dashboard/vehicles';
+
+  // Table Rows
+  case CourierRow = 'courierRow';
+  case DepartmentRow = 'departmentRow';
+  case VehicleRow = 'vehicleRow';
+
+  // Add to database
+  case AddDepartment = 'addDepartment';
+  case AddCourier = 'addCourier';
+  case AddVehicle = 'addVehicle';
 }
 
 class Render {
@@ -22,8 +41,22 @@ class Render {
     include "./components/".$this->component.".component.php";
   }
 
-  function as_form(string $action, string $method) {
+  function render_form(string $action, string $method) {
     $args = $this->args;
-    include "./components/".$this->component.".component.php";
+    include "./components/login/".$this->component.".component.php";
+  }
+
+  function render_login() {
+    $args = $this->args;
+    include "./components/login/".$this->component.".component.php";
+  }
+
+  function render_dash() {
+    $args = $this->args;
+    include "./components/dashboard/".$this->component.".component.php";
+  }
+
+  function render_view() {
+    include "./views/".$this->component.".view.php";
   }
 }
