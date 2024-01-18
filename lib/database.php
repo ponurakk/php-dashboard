@@ -19,7 +19,7 @@ class Database {
 
     $pass_hashed = password_hash($pass, PASSWORD_DEFAULT);
 
-    $query = $this->conn->prepare("INSERT INTO accounts VALUES(null, ?, ?, CURRENT_DATE(), 'Disabled')");
+    $query = $this->conn->prepare("INSERT INTO account VALUES(null, ?, ?, CURRENT_DATE(), 'Disabled')");
     $query->bind_param('ss', $user, $pass_hashed);
     $query->execute();
 
@@ -34,7 +34,7 @@ class Database {
   }
 
   public function loginAccount(string $user, string $pass) {
-    $query = $this->conn->prepare("SELECT id, login, password FROM accounts WHERE login = ?");
+    $query = $this->conn->prepare("SELECT id, login, password FROM account WHERE login = ?");
     $query->bind_param("s", $user);
     $query->execute();
     $query->bind_result($id, $userLogin, $userPass);
@@ -63,7 +63,7 @@ class Database {
       return false;
     }
 
-    $query = $this->conn->prepare("SELECT login, password FROM accounts WHERE id = ?");
+    $query = $this->conn->prepare("SELECT login, password FROM account WHERE id = ?");
     $query->bind_param("s", $_SESSION["id"]);
     $query->execute();
     $query->bind_result($userLogin, $userPass);
