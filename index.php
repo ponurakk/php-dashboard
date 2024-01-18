@@ -57,11 +57,11 @@ set_error_handler("exception_error_handler");
       $router->get(BasePath, "views/index.view.php");
       $router->get(BasePath."/login", "views/login/login.view.php");
       $router->get(BasePath."/register", "views/login/register.view.php");
-      $router->get(BasePath."/dashboard", "views/dashboard.view.php");
+      $router->get(BasePath."/dashboard", "views/dashboard.view.php", true);
 
       //# Api
       $router->post(BasePath."/login", "api/login.php");
-      $router->post(BasePath."/router", "api/register.php");
+      $router->post(BasePath."/register", "api/register.php");
 
       //# Errors
       $router->any("/500", "views/errors/500.error.php");
