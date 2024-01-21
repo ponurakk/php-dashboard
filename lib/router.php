@@ -58,8 +58,10 @@ class Router {
 
 		try {
 			require_once "./$path_to_include";
-			(new Render(ComponentType::Footer))->render();
-			echo '<script src="'.BasePath.'/scripts/cursors.js"></script>';
+			if (!str_starts_with($path_to_include, "api")) {
+				(new Render(ComponentType::Footer))->render();
+				echo '<script src="'.BasePath.'/scripts/cursors.js"></script>';
+			}
 		} catch (Exception $e) {
 			(new Render(ComponentType::Footer))->render();
 			echo '<script src="'.BasePath.'/scripts/cursors.js"></script>';
