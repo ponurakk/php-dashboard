@@ -1,5 +1,4 @@
 const BasePath = localStorage.getItem("BasePath");
-console.log(BasePath);
 const cursorTag = document.querySelector("div.cursors");
 const balls = cursorTag.querySelectorAll("div");
 const buttons = document.querySelectorAll("button, input, .clickable");

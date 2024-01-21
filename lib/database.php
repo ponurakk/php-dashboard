@@ -57,7 +57,12 @@ class Database {
     //   echo "Invalid data";
     // }
   }
-
+  public function menagerCurier(){
+    $query = $this->conn->prepare("SELECT name, lastname, phone_number, hours_from, hours_to, department_id FROM couriers");
+    $query->execute();
+    $query->bind_result($name, $phone_number, $hores_from, $hours_to, $department_id);
+    $query->fetch();
+  }
   public function checkValidLogin(): bool {
     if (!isset($_SESSION["id"])) {
       return false;

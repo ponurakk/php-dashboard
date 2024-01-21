@@ -1,4 +1,4 @@
-class okok{
+class curiersMenagers{
     constructor(cName, cLastName, cPhoneNumber, cStartHour, cFinishHour, cDepantment){
         this.cName = document.getElementById(cName).value;
         this.cLastName = document.getElementById(cLastName).value;
@@ -8,19 +8,21 @@ class okok{
         this.cDepantment = document.getElementById(cDepantment).value;
     }
 
-    addCurier(){
-        
-
-        const res =  fetch(url, {
-            method: 'post',
+    async getCurier(){
+        const res =  await fetch(`${BasePath}/api/couriers`, {
+            method: 'GET',
             headers: {
-                'content-type' : 'appLocation/json'
-            },
-            body: JSON.stringify(body)
+                'content-type' : 'application/json'
+            }
         });
-        fetch()
+        console.log(res);
     }
 }
 
-let btn = 
-asd.addCurier();
+let btn = document.getElementById('addCurier');
+
+btn.addEventListener("click", ()=>{
+    let curier = new curiersMenagers("courier_name", "courier_last_name", "courier_phone_number", "courier_start_hour", "courier_start_hour", "courier_department"); 
+    curier.getCurier();
+})
+    
