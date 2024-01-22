@@ -92,4 +92,15 @@ class Database {
     }
     return $ret;
   }
+  public function addCourier($name, $lastname, $phone_number, $hours_from, $hours_to, $department_id): void {
+    $query = $this->conn->prepare("INSERT INTO couriers VALUES(null, ?, ?, ?, ?, ?, ?)");
+    $query->bind_param('sssssi', $name, $lastname, $phone_number, $hours_from, $hours_to, $department_id);
+    $query->execute();
+
+    if ($query->affected_rows == 1) {
+      echo "OK";
+    } else {
+      echo "Error";
+    }
+  }
 }
