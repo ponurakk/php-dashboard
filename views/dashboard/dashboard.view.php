@@ -20,6 +20,7 @@
               (new Render(ComponentType::Vehicles))->render_view();
               break;
             default:
+              (new Render(ComponentType::Dashboard))->render_dash();
               break;
           }
           ?>
