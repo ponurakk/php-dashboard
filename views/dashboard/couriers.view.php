@@ -4,7 +4,7 @@
     <td class="py-3 px-2">{{lastname}}</td>
     <td class="py-3 px-2">{{phone_number}}</td>
     <td class="py-3 px-2">{{hours_from}} - {{hours_to}}</td>
-    <td class="py-3 px-2">{{department_id}}</td>
+    <td class="py-3 px-2">{{department_name}}</td>
     <td class="py-3 px-2"></td>
   </tr>
 </template>

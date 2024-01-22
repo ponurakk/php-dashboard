@@ -86,7 +86,7 @@ class Database {
 
   public function getCourier(): array {
     $ret = array();
-    $query = $this->conn->query("SELECT name, lastname, phone_number, hours_from, hours_to, department_id FROM couriers");
+    $query = $this->conn->query("SELECT couriers.name, couriers.lastname, couriers.phone_number, couriers.hours_from, couriers.hours_to, departments.name AS department_name FROM couriers INNER JOIN departments ON couriers.department_id = departments.id");
     while ($row = $query->fetch_array(MYSQLI_ASSOC)) {
       array_push($ret, $row);
     }
