@@ -24,10 +24,17 @@ class CouriersManagers {
         await fetch(`${BasePath}/api/couriers`, {
             method: "POST",
             headers: { "content-type": "application/json" },
-            body: JSON.stringify({"name":this.name,"lastname":this.lastName,"phone_number":this.phoneNumber,"hours_from":this.startHour,"hours_to":this.finishHour,"department_id":this.department})
+            body: JSON.stringify({
+                "name": this.name,
+                "lastname": this.lastName,
+                "phone_number": this.phoneNumber,
+                "hours_from": this.startHour,
+                "hours_to": this.finishHour,
+                "department_id": this.department
+            })
         });
     }
-    async insertTable(table, template){
+    async insertTable(table, template) {
         table.innerHTML = " ";
         const courierRow = await courier.getCourier();
         courierRow.forEach(row => {
@@ -44,7 +51,7 @@ const courier = new CouriersManagers();
 const table = document.querySelector("#courierTable");
 let template = document.querySelector("#courierRowTemplate");
 (async () => {
-  await courier.insertTable(table, template);
+    await courier.insertTable(table, template);
 })();
 
 

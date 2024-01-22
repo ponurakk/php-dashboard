@@ -92,9 +92,31 @@ class Database {
     }
     return $ret;
   }
+
   public function addCourier($name, $lastname, $phone_number, $hours_from, $hours_to, $department_id): void {
     $query = $this->conn->prepare("INSERT INTO couriers VALUES(null, ?, ?, ?, ?, ?, ?)");
     $query->bind_param('sssssi', $name, $lastname, $phone_number, $hours_from, $hours_to, $department_id);
+    $query->execute();
+
+    if ($query->affected_rows == 1) {
+      echo "OK";
+    } else {
+      echo "Error";
+    }
+  }
+
+  public function getDepartments(): array {
+    $ret = array();
+    $query = $this->conn->query("SELECT name, street, home_number, local_number, post_code, city, phone_number, email FROM departments");
+    while ($row = $query->fetch_array(MYSQLI_ASSOC)) {
+      array_push($ret, $row);
+    }
+    return $ret;
+  }
+
+  public function addDepartment($name, $street, $home_number, $local_number, $post_code, $city, $phone_number, $email): void {
+    $query = $this->conn->prepare("INSERT INTO departments VALUES(null, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $query->bind_param('ssisssss', $name, $street, $home_number, $local_number, $post_code, $city, $phone_number, $email);
     $query->execute();
 
     if ($query->affected_rows == 1) {
