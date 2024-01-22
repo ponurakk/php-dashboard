@@ -24,7 +24,6 @@
           <th class="text-left py-3 px-2 rounded-r-lg">Actions</th>
         </thead>
         <tbody id="courierTable">
-          <!-- <?php (new Render(ComponentType::CourierRow))->render_dash(); ?> -->
         </tbody>
       </table>
     </div>
