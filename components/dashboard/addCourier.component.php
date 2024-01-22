@@ -59,4 +59,3 @@
     <input type="button" id="addCurier" class="bg-white bg-no-repeat px-6 py-3 font-bold text-black w-1/2 justify-center rounded-lg bg-primary-linear transition-all duration-300 ease-out bg-[length:200%] text-xl bg-[200%] hover:bg-[100%] clickable hover:text-white" value="Submit">
   </form>
 </div>
-<script src="<?php echo BasePath ?>/scripts/curier.js"></script>
