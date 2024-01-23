@@ -137,4 +137,14 @@ class Database {
       echo "Error";
     }
   }
+
+
+  public function getRowCounts(): array {
+    $ret = array();
+    $query = $this->conn->query("select (select count(*) from couriers) as couriers, (select count(*) from departments) as departments, (select count(*) from vehicles) as vehicles, (select count(*) from orders) as orders, (select count(*) from delivery) as delivery, (select count(*) from routes) as routes, (select count(*) from complaints) as complaints");
+    while ($row = $query->fetch_array(MYSQLI_ASSOC)) {
+      array_push($ret, $row);
+    }
+    return $ret[0];
+  }
 }

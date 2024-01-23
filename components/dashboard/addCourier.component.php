@@ -45,7 +45,7 @@
     <div>
       <label for="courier_department" class="block font-large text-lg font-medium leading-6 text-neutral-400">Courier Department</label>
       <div class="mt-2 relative">
-        <div class="text-black absolute left-1 top-1/2 -translate-y-1/2"><?php echo Icon::Plane->value ?></div>
+        <div class="text-black absolute left-1 top-1/2 -translate-y-1/2"><?php echo Icon::Home->value ?></div>
         <select id="courier_department" name="courier_department" class="block w-full rounded-md border-0 py-1.5 text-gray-900 sm:text-lg sm:leading-6 focus:outline-none pl-9">
           <option value="" selected disabled>Select Department</option>
           <?php
