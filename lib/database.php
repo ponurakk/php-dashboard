@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Database {
   private $conn;
@@ -86,7 +86,7 @@ class Database {
 
   public function getCourier(): array {
     $ret = array();
-    $query = $this->conn->query("SELECT couriers.name, couriers.lastname, couriers.phone_number, couriers.hours_from, couriers.hours_to, departments.name AS department_name FROM couriers INNER JOIN departments ON couriers.department_id = departments.id");
+    $query = $this->conn->query("SELECT couriers.id, couriers.name, couriers.lastname, couriers.phone_number, couriers.hours_from, couriers.hours_to, departments.name AS department_name FROM couriers INNER JOIN departments ON couriers.department_id = departments.id");
     while ($row = $query->fetch_array(MYSQLI_ASSOC)) {
       array_push($ret, $row);
     }
@@ -96,6 +96,18 @@ class Database {
   public function addCourier($name, $lastname, $phone_number, $hours_from, $hours_to, $department_id): void {
     $query = $this->conn->prepare("INSERT INTO couriers VALUES(null, ?, ?, ?, ?, ?, ?)");
     $query->bind_param('sssssi', $name, $lastname, $phone_number, $hours_from, $hours_to, $department_id);
+    $query->execute();
+
+    if ($query->affected_rows == 1) {
+      echo "OK";
+    } else {
+      echo "Error";
+    }
+  }
+
+  public function removeCourier($id): void {
+    $query = $this->conn->prepare("DELETE FROM couriers WHERE id = ?");
+    $query->bind_param('i', $id);
     $query->execute();
 
     if ($query->affected_rows == 1) {

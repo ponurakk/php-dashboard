@@ -34,6 +34,17 @@ class CouriersManagers {
             })
         });
     }
+
+    async removeCourier(id) {
+        await fetch(`${BasePath}/api/couriers`, {
+            method: "DELETE",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({
+                "id": id,
+            })
+        });
+    }
+
     async insertTable(table, template) {
         table.innerHTML = " ";
         const courierRow = await courier.getCourier();
@@ -46,18 +57,30 @@ class CouriersManagers {
     }
 }
 
-
 const courier = new CouriersManagers();
-const table = document.querySelector("#courierTable");
 let template = document.querySelector("#courierRowTemplate");
-(async () => {
-    await courier.insertTable(table, template);
-})();
 
+async function onPageReload() {
+    let table = document.querySelector("#courierTable");
+    await courier.insertTable(table, template);
+
+    let removeBtns = table.querySelectorAll(".courier-remove");
+    removeBtns.forEach(item => {
+        item.addEventListener("click", async (e) => {
+            await courier.removeCourier(e.target.dataset.id);
+            await onPageReload();
+        })
+    })
+}
+
+
+(async () => {
+    await onPageReload();
+})();
 
 let btn = document.getElementById("addCourier");
 
 btn.addEventListener("click", async () => {
     await courier.addCourier();
-    await courier.insertTable(table, template);
+    await onPageReload();
 })
