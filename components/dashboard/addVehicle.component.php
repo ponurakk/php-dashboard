@@ -40,10 +40,13 @@
         <div class="text-black absolute left-1 top-1/2 -translate-y-1/2"><?php echo Icon::Plane->value ?></div>
         <select id="vehicle_department" name="vehicle_department" class="block w-full rounded-md border-0 py-1.5 text-gray-900 sm:text-lg sm:leading-6 focus:outline-none pl-9">
           <option value="" selected disabled>Select Department</option>
-          <option value="IT">IT Department</option>
-          <option value="HR">HR Department</option>
-          <option value="Operations">Operations Department</option>
-          <option value="Marketing">Marketing Department</option>
+          <?php
+          $db = new Database();
+          $departments = $db->getDepartments();
+          foreach ($departments as $key => $value) {
+            echo '<option value="'.$value["id"].'">'.$value["name"].'</option>';
+          }
+          ?>
         </select>
       </div>
     </div>

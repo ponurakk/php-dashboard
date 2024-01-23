@@ -107,7 +107,7 @@ class Database {
 
   public function getDepartments(): array {
     $ret = array();
-    $query = $this->conn->query("SELECT name, street, home_number, local_number, post_code, city, phone_number, email FROM departments");
+    $query = $this->conn->query("SELECT id, name, street, home_number, local_number, post_code, city, phone_number, email FROM departments");
     while ($row = $query->fetch_array(MYSQLI_ASSOC)) {
       array_push($ret, $row);
     }
