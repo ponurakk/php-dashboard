@@ -2,6 +2,7 @@ const BasePath = localStorage.getItem("BasePath");
 const cursorTag = document.querySelector("div.cursors");
 const balls = cursorTag.querySelectorAll("div");
 const buttons = document.querySelectorAll("button, input, .clickable");
+const body = document.querySelector("body");
 
 let aimX = 0;
 let aimY = 0;
@@ -18,7 +19,7 @@ balls.forEach((ball, i) => {
 
     ball.style.left = currentX + "px"
     ball.style.top = currentY + "px";
-    ball.style.opacity = speed*1.5;
+    ball.style.opacity = speed * 1.5;
 
     requestAnimationFrame(animate);
   }
@@ -27,8 +28,17 @@ balls.forEach((ball, i) => {
 });
 
 document.addEventListener("mousemove", (e) => {
-  aimX = e.pageX;
-  aimY = e.pageY;
+  if (e.pageX + 16 <= window.innerWidth) {
+    aimX = e.pageX;
+  }
+
+  let bodyRect = document.body.getBoundingClientRect();
+  let elemRect = body.getBoundingClientRect();
+  let offset = elemRect.bottom - bodyRect.top;
+
+  if (e.pageY + 16 <= offset) {
+    aimY = e.pageY;
+  }
 });
 
 buttons.forEach(btn => {
