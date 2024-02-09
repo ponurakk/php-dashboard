@@ -76,6 +76,7 @@ set_error_handler("exception_error_handler");
     $router->get(BasePath . "/dashboard/vehicles", "views/dashboard/dashboard.view.php", true);
 
     //# Api
+    $router->get(BasePath . "/logout", "api/logout.php");
     $router->post(BasePath . "/login", "api/login.php");
     $router->post(BasePath . "/register", "api/register.php");
 
