@@ -38,7 +38,7 @@
 </div>
 
 <div class="p-4 absolute bottom-0 right-0 flex flex-col gap-4">
-  <a href=<?php echo BasePath."/"?> class="bg-white bg-no-repeat px-6 py-3 font-bold text-center text-black w-52 justify-center rounded-lg bg-primary-linear transition-all duration-300 ease-out bg-[length:200%] bg-[200%] hover:bg-[100%] clickable hover:text-white">
+  <a href="<?php echo BasePath . '/' ?>" class="bg-white bg-no-repeat px-6 py-3 font-bold text-center text-black w-52 justify-center rounded-lg bg-primary-linear transition-all duration-300 ease-out bg-[length:200%] bg-[200%] hover:bg-[100%] clickable hover:text-white">
     Return Home
   </a>
 </div>
