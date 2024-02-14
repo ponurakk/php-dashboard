@@ -8,6 +8,9 @@
     <td class="py-3 px-2">{{city}}</td>
     <td class="py-3 px-2">{{phone_number}}</td>
     <td class="py-3 px-2">{{email}}</td>
+    <td class="py-3 px-2">
+      <input type="button" class="department-remove bg-white bg-no-repeat px-6 py-3 font-bold text-black w-full justify-center rounded-lg bg-primary-linear transition-all duration-300 ease-out bg-[length:200%] text-xl bg-[200%] hover:bg-[100%] clickable hover:text-white" data-id="{{id}}" value="Delete">
+    </td>
   </tr>
 </template>
 

@@ -137,6 +137,48 @@ class Database {
       echo "Error";
     }
   }
+  public function removeDepartment($id): void {
+    $query = $this->conn->prepare("DELETE FROM departments WHERE id = ?");
+    $query->bind_param('i', $id);
+    $query->execute();
+
+    if ($query->affected_rows == 1) {
+      echo "OK";
+    } else {
+      echo "Error";
+    }
+  }
+  public function getVehicle(): array {
+    $ret = array();
+    $query = $this->conn->query("SELECT vehicles.id, vehicles.brand, vehicles.model, vehicles.registration, vehicles.capacity, departments.name FROM vehicles INNER JOIN departments ON vehicles.department_id = departments.id");
+    while ($row = $query->fetch_array(MYSQLI_ASSOC)) {
+      array_push($ret, $row);
+    }
+    return $ret;
+  }
+
+  public function addVehicle($brand, $model, $registration, $capacity, $department_id): void {
+    $query = $this->conn->prepare("INSERT INTO vehicles VALUES(null, ?, ?, ?, ?, ?)");
+    $query->bind_param('sssss', $brand, $model, $registration, $capacity, $department_id);
+    $query->execute();
+
+    if ($query->affected_rows == 1) {
+      echo "OK";
+    } else {
+      echo "Error";
+    }
+  }
+   public function removeVehicle($id): void {
+    $query = $this->conn->prepare("DELETE FROM vehicles WHERE id = ?");
+    $query->bind_param('i', $id);
+    $query->execute();
+
+    if ($query->affected_rows == 1) {
+      echo "OK";
+    } else {
+      echo "Error";
+    }
+  }
 
 
   public function getRowCounts(): array {

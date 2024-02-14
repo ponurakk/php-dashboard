@@ -39,6 +39,16 @@ class DepartmentsManagers {
     });
   }
 
+async removeDepartment(id) {
+    await fetch(`${BasePath}/api/departments`, {
+      method: "DELETE",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        "id": id,
+      })
+    });
+  }
+
   async insertTable(table, template) {
     table.innerHTML = " ";
     const departmentRow = await department.getDepartment();
@@ -52,16 +62,28 @@ class DepartmentsManagers {
 }
 
 const department = new DepartmentsManagers();
-const table = document.querySelector("#departmentTable");
 let template = document.querySelector("#departmentRowTemplate");
 
-(async () => {
+async function onPageReload() {
+  const table = document.querySelector("#departmentTable");
   await department.insertTable(table, template);
+
+  let removeBtns = table.querySelectorAll(".department-remove");
+  removeBtns.forEach(item => {
+    item.addEventListener("click", async (e) => {
+      await department.removeDepartment(e.target.dataset.id);
+      await onPageReload();
+    })
+  })
+}
+
+(async () => {
+  await onPageReload();
 })();
 
 let btn = document.getElementById("addDepartment");
 
 btn.addEventListener("click", async () => {
   await department.addDepartment();
-  await department.insertTable(table, template);
+  await onPageReload();
 })
