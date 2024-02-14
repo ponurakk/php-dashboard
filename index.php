@@ -92,6 +92,8 @@ set_error_handler("exception_error_handler");
     $router->post(BasePath . "/api/vehicles", "api/add_vehicle.php");
     $router->delete(BasePath . "/api/vehicles", "api/remove_vehicle.php");
 
+    $router->get(BasePath . "/api/status", "api/get_status.php");
+
     //# Errors
     $router->any(BasePath . "/500", "views/errors/500.error.php");
     $router->any("/404", "views/errors/404.error.php");

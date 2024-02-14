@@ -147,4 +147,15 @@ class Database {
     }
     return $ret[0];
   }
+
+  public function getDeliveryStatus() {
+    $ret = array();
+    $query = $this->conn->query("SELECT * FROM delivery_status;");
+
+    while ($row = $query->fetch_array(MYSQLI_ASSOC)) {
+      array_push($ret, $row);
+    }
+
+    return $ret;
+  }
 }

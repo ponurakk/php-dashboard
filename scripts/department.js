@@ -41,7 +41,7 @@ class DepartmentsManagers {
 
   async insertTable(table, template) {
     table.innerHTML = " ";
-    const departmentRow = await department.getDepartment();
+    const departmentRow = await this.getDepartment();
     departmentRow.forEach(row => {
       const newTemplate = template.innerHTML.replace(/{{(\w*)}}/g, (_, key) => {
         return row.hasOwnProperty(key) ? row[key] : "";

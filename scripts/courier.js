@@ -47,7 +47,7 @@ class CouriersManagers {
 
   async insertTable(table, template) {
     table.innerHTML = " ";
-    const courierRow = await courier.getCourier();
+    const courierRow = await this.getCourier();
     courierRow.forEach(row => {
       const newTemplate = template.innerHTML.replace(/{{(\w*)}}/g, (_, key) => {
         return row.hasOwnProperty(key) ? row[key] : "";
