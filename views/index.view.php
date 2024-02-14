@@ -1,8 +1,5 @@
 <div class="bg-black text-white relative">
-
   <main class="bg-[40%_14%] bg-no-repeat object-contain bg-main-blob">
-    
-
     <header class="text-white h-screen w-screen flex items-center z-20">
       <div class="container mx-auto text-center">
 
@@ -17,7 +14,6 @@
 
       </div>
     </header>
-
   </main>
 
   <section class="py-36">

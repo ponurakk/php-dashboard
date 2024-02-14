@@ -9,6 +9,8 @@ enum ComponentType: string {
   case NavBar = 'navBar';
   case SideBar = 'sideBar';
   case Footer = 'footer';
+  case Box = 'box';
+  case Dashboard = 'dashboard';
 
   // Dashboard sites
   case Couriers = 'dashboard/couriers';

@@ -2,7 +2,7 @@
 ob_end_clean();
 
 $db = new Database();
-$couriers = $db->getCourier();
+$status = $db->getDeliveryStatus();
 
 header('Content-Type: application/json; charset=utf-8');
-echo json_encode($couriers);
+echo json_encode($status);

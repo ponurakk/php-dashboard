@@ -2,7 +2,7 @@
 ob_end_clean();
 
 $db = new Database();
-$couriers = $db->getCourier();
+$departments = $db->getDepartments();
 
 header('Content-Type: application/json; charset=utf-8');
-echo json_encode($couriers);
+echo json_encode($departments);

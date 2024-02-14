@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Database {
   private $conn;
@@ -82,5 +82,122 @@ class Database {
     unset($_SESSION["password"]);
     $router = new Router();
     $router->redirect("/");
+  }
+
+  public function getCourier(): array {
+    $ret = array();
+    $query = $this->conn->query("SELECT couriers.id, couriers.name, couriers.lastname, couriers.phone_number, couriers.hours_from, couriers.hours_to, departments.name AS department_name FROM couriers INNER JOIN departments ON couriers.department_id = departments.id");
+    while ($row = $query->fetch_array(MYSQLI_ASSOC)) {
+      array_push($ret, $row);
+    }
+    return $ret;
+  }
+
+  public function addCourier($name, $lastname, $phone_number, $hours_from, $hours_to, $department_id): void {
+    $query = $this->conn->prepare("INSERT INTO couriers VALUES(null, ?, ?, ?, ?, ?, ?)");
+    $query->bind_param('sssssi', $name, $lastname, $phone_number, $hours_from, $hours_to, $department_id);
+    $query->execute();
+
+    if ($query->affected_rows == 1) {
+      echo "OK";
+    } else {
+      echo "Error";
+    }
+  }
+
+  public function removeCourier($id): void {
+    $query = $this->conn->prepare("DELETE FROM couriers WHERE id = ?");
+    $query->bind_param('i', $id);
+    $query->execute();
+
+    if ($query->affected_rows == 1) {
+      echo "OK";
+    } else {
+      echo "Error";
+    }
+  }
+
+  public function getDepartments(): array {
+    $ret = array();
+    $query = $this->conn->query("SELECT id, name, street, home_number, local_number, post_code, city, phone_number, email FROM departments");
+    while ($row = $query->fetch_array(MYSQLI_ASSOC)) {
+      array_push($ret, $row);
+    }
+    return $ret;
+  }
+
+  public function addDepartment($name, $street, $home_number, $local_number, $post_code, $city, $phone_number, $email): void {
+    $query = $this->conn->prepare("INSERT INTO departments VALUES(null, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $query->bind_param('ssisssss', $name, $street, $home_number, $local_number, $post_code, $city, $phone_number, $email);
+    $query->execute();
+
+    if ($query->affected_rows == 1) {
+      echo "OK";
+    } else {
+      echo "Error";
+    }
+  }
+  public function removeDepartment($id): void {
+    $query = $this->conn->prepare("DELETE FROM departments WHERE id = ?");
+    $query->bind_param('i', $id);
+    $query->execute();
+
+    if ($query->affected_rows == 1) {
+      echo "OK";
+    } else {
+      echo "Error";
+    }
+  }
+  public function getVehicle(): array {
+    $ret = array();
+    $query = $this->conn->query("SELECT vehicles.id, vehicles.brand, vehicles.model, vehicles.registration, vehicles.capacity, departments.name FROM vehicles INNER JOIN departments ON vehicles.department_id = departments.id");
+    while ($row = $query->fetch_array(MYSQLI_ASSOC)) {
+      array_push($ret, $row);
+    }
+    return $ret;
+  }
+
+  public function addVehicle($brand, $model, $registration, $capacity, $department_id): void {
+    $query = $this->conn->prepare("INSERT INTO vehicles VALUES(null, ?, ?, ?, ?, ?)");
+    $query->bind_param('sssss', $brand, $model, $registration, $capacity, $department_id);
+    $query->execute();
+
+    if ($query->affected_rows == 1) {
+      echo "OK";
+    } else {
+      echo "Error";
+    }
+  }
+   public function removeVehicle($id): void {
+    $query = $this->conn->prepare("DELETE FROM vehicles WHERE id = ?");
+    $query->bind_param('i', $id);
+    $query->execute();
+
+    if ($query->affected_rows == 1) {
+      echo "OK";
+    } else {
+      echo "Error";
+    }
+  }
+
+
+  public function getRowCounts(): array {
+    $ret = array();
+    $query = $this->conn->query("select (select count(*) from couriers) as couriers, (select count(*) from departments) as departments, (select count(*) from vehicles) as vehicles, (select count(*) from orders) as orders, (select count(*) from delivery) as delivery, (select count(*) from routes) as routes, (select count(*) from complaints) as complaints");
+    while ($row = $query->fetch_array(MYSQLI_ASSOC)) {
+      array_push($ret, $row);
+    }
+    return $ret[0];
+  }
+
+  public function getDeliveryStatus() {
+    $ret = array();
+    $query = $this->conn->query("SELECT * FROM delivery_status;");
+
+    while ($row = $query->fetch_array(MYSQLI_ASSOC)) {
+      array_push($ret, $row);
+    }
+
+    return $ret;
   }
 }
