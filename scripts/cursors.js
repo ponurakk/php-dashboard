@@ -54,3 +54,21 @@ buttons.forEach(btn => {
     })
   })
 })
+
+document.addEventListener("mouseout", (e) => {
+  var from = e.relatedTarget || e.toElement;
+  if (!from || from.nodeName == "HTML") {
+    balls.forEach(ball => {
+      ball.style.display = "none";
+    })
+  }
+})
+
+document.addEventListener("mouseover", (e) => {
+  var from = e.relatedTarget || e.toElement;
+  if (!from || from.nodeName == "HTML") {
+    balls.forEach(ball => {
+      ball.style.display = "block";
+    })
+  }
+})
