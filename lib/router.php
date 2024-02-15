@@ -96,7 +96,7 @@ class Router {
 	}
 
 	public function errorRedirect(string $route, $e) {
-		$url = "http://$_SERVER[HTTP_HOST]".$route;
+		$url = "http://$_SERVER[HTTP_HOST]".BasePath.$route;
 		$data = [$e->getMessage(), $e->getLine(), $e->getTraceAsString()];
 
 		$options = [
